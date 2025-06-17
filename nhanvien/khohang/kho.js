@@ -36,7 +36,7 @@ document.querySelectorAll('.item input').forEach(input => {
       }
 
       try {
-        const res = await fetch('/api/khohang/nhap', {
+        const res = await fetch('https://restaurant-backend-58cn.onrender.com/api/khohang/nhap', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ ten, soLuong })
