@@ -48,7 +48,7 @@ for (let i = 1; i <= 20; i++) {
     } else if (trangThai === "co-khach") {
       addPopupButton("Xem hóa đơn", () => {
         const tenBan = ban.innerText.trim();
-        fetch(`http://192.168.0.124:3000/api/hoadon/${encodeURIComponent(tenBan)}`)
+        fetch(`https://restaurant-backend-58cn.onrender.com/api/hoadon/${encodeURIComponent(tenBan)}`)
           .then(res => res.json())
           .then(data => {
             let content = `<h3>${data.tenBan}</h3>`;
@@ -136,7 +136,7 @@ function openMenu(goiThem = false) {
 
 
 function loadHoaDon(tenBan) {
-  fetch(`http://192.168.0.124:3000/api/hoadon/${encodeURIComponent(tenBan)}`)
+  fetch(`https://restaurant-backend-58cn.onrender.com/api/hoadon/${encodeURIComponent(tenBan)}`)
     .then(res => {
       if (!res.ok) throw new Error("Không tìm thấy hóa đơn");
       return res.json();
@@ -191,7 +191,7 @@ function saveMenu() {
 
   if (isGoiThemMon) {
     // PUT cập nhật món gọi thêm
-    fetch("http://192.168.0.124:3000/api/hoadon", {
+    fetch("https://restaurant-backend-58cn.onrender.com/api/hoadon", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -234,7 +234,7 @@ function saveMenu() {
 
   } else {
     // POST tạo hóa đơn mới
-    fetch("http://192.168.0.124:3000/api/hoadon", {
+    fetch("https://restaurant-backend-58cn.onrender.com/api/hoadon", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -286,7 +286,7 @@ function changeQuantity(button, delta) {
 }
 
 function thanhToan(tenBan) {
-  fetch("http://192.168.0.124:3000/api/hoadon/thanhtoan", {
+  fetch("https://restaurant-backend-58cn.onrender.com/api/hoadon/thanhtoan", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ tenBan }),

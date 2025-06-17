@@ -1,6 +1,6 @@
 
 function loadKhoHang() {
-  fetch('http://192.168.0.124:3000/api/khohang')
+  fetch('https://restaurant-backend-58cn.onrender.com/api/khohang')
     .then(res => res.json())
     .then(dsKho => {
       dsKho.forEach(mon => {
